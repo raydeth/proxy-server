@@ -1,9 +1,14 @@
 const axios = require('axios');
 
-const amoCrmUrl = 'https://whitecube2.amocrm.ru/api/v4';
+const amoCrmUrl = 'https://whitecube2.amocrm.ru';
 
-const amoCrmFetch = axios.create({
+const fetch = axios.create({
+    baseURL: amoCrmUrl + '/api/v4'
+});
+
+const tokenFetch = axios.create({
     baseURL: amoCrmUrl
 });
 
-module.exports = amoCrmFetch;
+exports.fetch = fetch;
+exports.tokenFetch = tokenFetch;
